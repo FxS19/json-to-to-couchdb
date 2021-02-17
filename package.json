@@ -1,0 +1,22 @@
+{
+  "name": "json-to-to-couchdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FxS19/json-to-to-couchdb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FxS19/json-to-to-couchdb/issues"
+  },
+  "homepage": "https://github.com/FxS19/json-to-to-couchdb#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
