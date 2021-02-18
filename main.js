@@ -18,8 +18,22 @@ async function check(response) {
     if (response.includes(tablename)) {
         console.log("table already there");
     } else {
-        console.log("Creating table Not implemented");
-        return;
+        const response = await fetch("http://" + credentials + "@" + serverURL + "/" + tablename, {
+            method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json' // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: ""
+        });
+        if ((await response.json()).ok != true) {
+            console.warn(await response.json());
+            return;
+        }
     }
     await upload();
 }
